@@ -179,3 +179,9 @@ Wikipedia. [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning).
 Coursera. [Machine Learning](https://www.coursera.org/learn/machine-learning/).
 
 Datacamp. [Scikit-Learn Cheat Sheet: Python Machine Learning] (https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet).
+
+Scikit Learn. [User guide: contents] (http://scikit-learn.org/stable/user_guide.html).
+
+Scikit Learn. [API Reference] (http://scikit-learn.org/stable/modules/classes.html).
+
+Github. [Introduction to machine learning with scikit-learn] (https://github.com/justmarkham/scikit-learn-videos).
