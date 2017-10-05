@@ -51,7 +51,21 @@ print('Intercept: \n', linear.intercept_)
 predicted= linear.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/linear_model.html).
+
 ###### Logistic Regression
+
+It is used to estimate **discrete values** (binary values as 0/1, yes / no, true / false) based on a group of independent variables. In simple words, it predicts the 
+probability of an event occurring, adjusting the data to a logistic function. Therefore, it is also known as logistic regression. As predicted by the probability, 
+its output values are something expected between 0 and 1. It is useful for modeling the probability of an **event occurring as a function of other factors**. 
+So, the chances of the result are modeled as a linear combination of the forecast variables.
+
+**(p / (1-p)) logit (p) = ln (p / (1-p)) probability of occurrence / probability of occurrence ln (odds) = ln = b0 + b1X1 + b2X2 + b3X3 .... + bkXk**
+
+Above, p is the probability of the presence of the characteristic of interest. It chooses the parameters that **maximize the probability** of observing sample values
+rather than **minimizing the sum of error square** (as in simple regression). Now, using this equation, we can plot the results in graphic below:
+<p align="center"> <img src="./images/03_logistic_regression.png"> </p>
+So below there is a python code with an example using logistic regression:
+
 ```python
 #Import Library
 from sklearn.linear_model import LogisticRegression
@@ -68,7 +82,16 @@ print('Intercept: \n', model.intercept_)
 predicted= model.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/linear_model.html#logistic-regression).
+
 ###### Decision Tree
+
+It is a type of supervised learning algorithm most commonly used for classification problems. Surprisingly, it works for both categorical and continuous dependent
+variables. In these algorithms we divide the population into two or more homogeneous groups. This is done based on the most significant independent attributes or 
+variables to make the groups as distinct as possible.
+<p align="center"> <img src="./images/04_decision_tree.png"> </p>
+In the image above, it can be seen that the population is classified into two different groups based on multiple attributes, to identify if they will PLAY or not.
+To divide the population into different and heterogeneous groups, several techniques are used, such as Gini, Information Gain, Chi-Square and entropy.
+So below there is a python code with an example using decision tree:
 ```python
 #Import Library
 #Import other necessary libraries like pandas, numpy...
