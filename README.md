@@ -108,6 +108,16 @@ predicted= model.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/tree.html).
 ###### SVM
+
+It is a method of classification. In this algorithm, each data is plotted as a point in an n-dimensional space (where n is the number of characteristics that one has)
+with the value of each characteristic being the value of a particular coordinate, these coordinates are called Support Vectors.
+<p align="center"> <img src="./images/05_1_svm.png"> </p>
+Now let's find a line that divides the data into two different groups of classified data. The line will be at the nearest point where the distances of each point in the
+two groups will be as large as possible.
+<p align="center"> <img src="./images/05_2_svm.png"> </p>
+In the example above, the line dividing the data into two sorted groups is the black line, because the two closest points are the farthest, off the line. This is our classifier.
+So, depending on which side of the line test data is placed, this will be the class in which the new data can be sorted.
+So below there is a python code with an example using decision svm:
 ```python
 #Import Library
 from sklearn import svm
@@ -122,6 +132,11 @@ predicted= model.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/svm.html).
 ###### Naive Bayes
+
+It is a classification technique based on the Bayes' theorem that assumes the independence between predictors. In simple terms, a classifier in Naive Bayes assumes
+that the presence of a particular characteristic in a class is not related to the presence of any other characteristic. This algorithm is mainly used in classifying
+text and with problems that have multiple classes.
+So below there is a python code with an example using decision naive bayes:
 ```python
 #Import Library
 from sklearn.naive_bayes import GaussianNB
@@ -134,6 +149,13 @@ predicted= model.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/naive_bayes.html).
 ###### KNN
+Can be used for both classification and regression problems. However, it is more widely used in classification problems in the industry. K nearest neighbors is a simple algorithm that stores all available cases and classifies new cases by majority vote of their neighbors k. The case that is being assigned to the class is most common among its nearest K neighbors as measured by a distance function.
+
+These distance functions can be Euclidian, Manhattan, Minkowski and Hamming distance. The first three functions are used for the continuous function and the fourth 
+(Hamming) for categorical variables. If K = 1, then the case is simply assigned to the class of its nearest neighbor. Sometimes choosing the K turns out to become a 
+challenge while running KNN modeling.
+<p align="center"> <img src="./images/07_knn.png"> </p>
+So below there is a python code with an example using decision knn:
 ```python
 #Import Library
 from sklearn.neighbors import KNeighborsClassifier
@@ -147,6 +169,17 @@ predicted= model.predict(x_test)
 ```
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/neighbors.html).
 ###### Random Forest
+
+Random forest is a trademarked term for a set of decision trees. In Random Forest, we have a collection of decision trees (so-called "Forest"). To sort a new object 
+based on attributes, each tree gives a rating and we say the tree "vote" for that class. The forest chooses the rank that has the most votes (most of all trees in the 
+forest).
+Each tree is planted and cultivated as follows:
+
+1. If the number of cases in the training set is N, then sample n cases is taken at random, but with replacement. This sample will be the training set for tree cultivation.
+2. If there are M input variables, a number m << M is specified such that at each node, the m variables are randomly selected out of M and the best division on these m is used to divide the node. The value of m is kept constant during forest growth.
+3. Each tree is grown to the greatest extent possible. There is no pruning.
+
+So below there is a python code with an example using decision random forest:
 ```python
 #Import Library
 from sklearn.ensemble import RandomForestClassifier
@@ -161,6 +194,11 @@ predicted= model.predict(x_test)
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/ensemble.html).
 
 ###### Gradient Boost and Adaboost
+
+GBM & AdaBoost are driving algorithms used when dealing with a large amount of data to make a forecast with high power. Reinforcement is a joint learning algorithm
+that combines the prediction of several base estimators to improve robustness over a single estimator. It combines several weak or medium predictors to a strong 
+predictor of construction. These algorithms always work well in data science competitions, such as Kaggle, AV Hackathon, CrowdAnalytix.
+So below there is a python code with an example using decision gradient boost and adaboost:
 ```python
 #Import Library
 from sklearn.ensemble import GradientBoostingClassifier
@@ -175,6 +213,11 @@ predicted= model.predict(x_test)
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/ensemble.html).
 
 ###### Neural Network
+
+<p align="center"> <img src="./images/09_1_neural_networks.png"> </p>
+<p align="center"> <img src="./images/09_2_neural_networks.png"> </p>
+
+So below there is a python code with an example using decision neural network:
 ```python
 #Import Library
 from sklearn.model_selection import train_test_split
@@ -209,6 +252,26 @@ We can derive structure from data where we don't necessarily know the effect of 
 Examples of Unsupervised Learning are: Apriori Algorithms and averages approximation.
 
 ###### K-Means
+
+It is a type of unsupervised algorithm that solves grouping problems. Your procedure follows a simple and easy way to sort a given set through a number of data groups
+(assume k clusters). The data points within a cluster are homogeneous and heterogeneous for groups of pairs. You look at the way it has spread to decipher how many 
+different clusters / population are present.
+<p align="center"> <img src="./images/08_1_kmeans.jpg"> </p>
+How K-means makes the clusters:
+
+1. K-means takes k number of points for each group known as centroid.
+2. Each data point forms a cluster with the centroid i.n. nearest k agglomerates.
+3. The centroid of each cluster is found based on existing cluster members. Here we have new centroids.
+4. As we have new centroid, repeat step 2 and 3. Find the closest distance to each data point from new centroid and relate to the new-k clusters. Repeat this process until convergence occurs, that is, the centroids do not change.
+
+How to determine the value of K:
+
+In K-means, we have groups and each group has its own barycenter. The sum of the squares of the difference between centroid and the data points within a cluster is the
+sum of the square value for that cluster. In addition, when the sum of the square values ​​for all clusters are added, it becomes the sum total of the square value for
+the cluster solution. We know that as the cluster number increases, this value continues to decrease, but if you plot the result you can see that the sum of the squared
+distances sharply decreases to some value of k, and then much more slowly thereafter . Here, we can find the ideal number of clusters.
+<p align="center"> <img src="./images/08_2_kmeans.png"> </p>
+So below there is a python code with an example using decision k-means:
 ```python
 #Import Library
 from sklearn.cluster import KMeans
@@ -223,6 +286,8 @@ predicted= model.predict(x_test)
 For more detail on this, please refer  this [link](http://scikit-learn.org/stable/modules/clustering.html#k-means).
 
 ###### Dimensionality Reduction Algorithm
+
+So below there is a python code with an example using decision decomposition:
 ```python
 #Import Library
 from sklearn import decomposition
