@@ -214,9 +214,22 @@ For more detail on this, please refer  this [link](http://scikit-learn.org/stabl
 
 ###### Neural Network
 
+Neural Networks are a machine learning framework that attempts to mimic the learning pattern of natural biological neural networks: you can think of them as a crude
+approximation of what we assume the human mind is doing when it is learning. Biological neural networks have interconnected neurons with dendrites that receive inputs,
+then based on these inputs they produce an output signal through an axon to another neuron. We will try to mimic this process through the use of Artificial Neural 
+Networks (ANN), which we will just refer to as neural networks from now on. Neural networks are the foundation of deep learning, a subset of machine learning that is 
+responsible for some of the most exciting technological advances today! The process of creating a neural network in Python begins with the most basic form, a single 
+perceptron. A perceptron has one or more inputs, a bias, an activation function, and a single output. The perceptron receives inputs, multiplies them by some weight, 
+and then passes them into an activation function to produce an output. There are many possible activation functions to choose from, such as the logistic function, a 
+trigonometric function, a step function etc. We must also make sure to add a bias to the perceptron, a constant weight outside of the inputs that allows us to achieve
+better fit for our predictive models. Check out the diagram below for a visualization of a perceptron:
 <p align="center"> <img src="./images/09_1_neural_networks.png"> </p>
+Once we have the output we can compare it to a known label and adjust the weights accordingly (the weights usually start off with random initialization values). We keep
+repeating this process until we have reached a maximum number of allowed iterations, or an acceptable error rate. To create a neural network, we simply begin to add 
+layers of perceptrons together, creating a multi-layer perceptron model of a neural network. You’ll have an input layer which directly takes in your data and an output
+layer which will create the resulting outputs. Any layers in between are known as hidden layers because they don’t directly “see” the feature inputs within the data 
+you feed in or the outputs. For a visualization of this check out the diagram below.
 <p align="center"> <img src="./images/09_2_neural_networks.png"> </p>
-
 So below there is a python code with an example using decision neural network:
 ```python
 #Import Library
